@@ -1,0 +1,56 @@
+version: "2"
+
+run:
+  tests: false
+  allow-parallel-runners: true
+
+linters:
+  disable:
+    - errcheck
+    - govet
+  enable:
+    - bidichk
+    - bodyclose
+    - errname
+    - errorlint
+    - ineffassign
+    - staticcheck
+    - unused
+    - whitespace
+  settings:
+    errorlint:
+      errorf: true
+  exclusions:
+    generated: "lax"
+    presets:
+      - "common-false-positives"
+      - "std-error-handling"
+    rules:
+      # grpc deprecated - requires major refactor
+      - linters:
+          - staticcheck
+        text: "SA1019.*(grpc\\.WithBlock|grpc\\.DialContext)"
+      # resolver.AddressMap -> AddressMapV2 migration
+      - linters:
+          - staticcheck
+        text: "SA1019.*resolver\\.(AddressMap|NewAddressMap)"
+      # jaeger exporter deprecated - migrate to OTLP
+      - linters:
+          - staticcheck
+        path: "pkg/telemetry/tracerexporters/jaeger.go"
+    paths:
+      - "docs$"
+      - "integration-test$"
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
+
+formatters:
+  enable:
+    - gofumpt
+    - goimports
+  settings:
+    goimports:
+      local-prefixes:
+        - "github.com/Permify/permify"

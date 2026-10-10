@@ -1,0 +1,33 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including",
+  "main": "gurubase.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "loose-envify": "^1.4.0",
+    "mintlify": "^4.2.269",
+    "monaco-editor": "^0.55.1",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "scheduler": "^0.27.0",
+    "state-local": "^1.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "overrides": {
+    "axios": "^1.12.0",
+    "path-to-regexp": "^0.1.12",
+    "body-parser": "^1.20.3",
+    "qs": "^6.14.1",
+    "zod": "^3.22.3",
+    "express": "^4.19.2",
+    "tar": "^6.2.1"
+  }
+}

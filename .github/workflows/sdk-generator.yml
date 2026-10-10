@@ -1,0 +1,34 @@
+name: Generate Client SDKs from OpenAPI
+
+on:
+  release:
+    types: [published]
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Harden Runner
+              uses: step-security/harden-runner@df199fb7be9f65074067a9eb93f12bb4c5547cf2 # v2.13.3
+              with:
+                egress-policy: audit
+
+            - name: Checkout repository
+              uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+            - name: Invoke generator workflow Permify/permify-java repo
+              uses: benc-uk/workflow-dispatch@e2e5e9a103e331dad343f381a29e654aea3cf8fc # v1.2.4
+              with:
+                workflow: generator.yml
+                repo: Permify/permify-java
+                ref: master
+                token: "${{ secrets.SDK_GH_TOKEN }}"
+        
+            - name: Invoke generator workflow Permify/permify-python repo
+              uses: benc-uk/workflow-dispatch@e2e5e9a103e331dad343f381a29e654aea3cf8fc # v1.2.4
+              with:
+                workflow: generator.yml
+                repo: Permify/permify-python
+                ref: main
+                token: "${{ secrets.SDK_GH_TOKEN }}"

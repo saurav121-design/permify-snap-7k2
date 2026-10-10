@@ -1,0 +1,102 @@
+---
+title: Explore Permify 
+description: 'Start building scalable and fine-grained authorization systems in mere minutes.'
+---
+
+<Info>
+  🎉 <strong>Exciting news:</strong> Permify has been acquired by FusionAuth! Read more: <a href="https://permify.co/post/fusionauth-acquires-permify/" target="_blank" rel="noopener noreferrer">Permify Blog Post</a> | <a href="https://fusionauth.io/blog/fusionauth-permify-pr" target="_blank" rel="noopener noreferrer">Official Press Release</a> | <a href="https://fusionauth.io/blog/fusionauth-acquires-permify" target="_blank" rel="noopener noreferrer">FusionAuth Blog Post</a>
+</Info>
+
+<img
+  className="block dark:hidden"
+  src="https://user-images.githubusercontent.com/34595361/196884110-147862c9-3657-4f07-831c-3e0d0e39eccf.png"
+  alt="Hero Light"
+/>
+<img
+  className="hidden dark:block"
+  src="https://user-images.githubusercontent.com/34595361/196884110-147862c9-3657-4f07-831c-3e0d0e39eccf.png"
+  alt="Hero Dark"
+/>
+
+## What is Permify?
+
+[Permify](https://github.com/Permify/permify) is an **open-source authorization service** for creating fine-grained and scalable authorization systems.
+
+With Permify, you can easily structure your authorization model, store authorization data in your preferred database, and interact with the Permify API to handle all authorization queries from your applications or services.
+
+Permify is inspired by Google’s consistent, global authorization system, [Google Zanzibar](https://permify.co/post/google-zanzibar-in-a-nutshell/).
+
+## Motivation
+
+Building scalable authorization systems is hard and time-consuming, and we're here to eliminate the authorization burden for devs. 
+
+Our goal is to make Google’s Zanzibar available to everyone and help engineering teams build a robust, flexible, and easily auditable authorization systems.
+
+Permify centrally position itself in your environment as a service, which consists 
+
+- [Permission Database](/getting-started/sync-data) to store your policies and related authorization data in a structured way.
+- [Policy decision point (PDP)](/getting-started/enforcement) to evaluate authorization queries - such as access checks - according to the data.
+
+See the [Authorization As A Service](./authorization-service) section to learn why building authorization is challenging and how our approach significantly reduces engineering efforts and secures future-proof access control systems.
+
+## With Permify, you can:
+
+📍 **Centralize & Standardize Your Authorization** - Abstract your authorization logic from your codebase and application logic to easily reason, test, and debug your authorization. Treat your authorization as a sole entity and move faster within your core development.
+
+🔮 **Build Granular Permissions For Any Case You Have** - You can create granular (resource-specific, hierarchical, context aware, etc) permissions and policies using Permify's domain specific language that is compatible with RBAC, ReBAC and ABAC.
+
+🛢️ **Manage and Store Authorization Data** - Store authorization-related data as structured relationships to efficiently manage large data volumes and achieve blazing fast response times.
+
+✅ **Interact with Easy to Use APIs** - Use Permify APIs to perform access checks, filter your resources with specific permissions, perform bulk permission checks for various resources, and more.
+
+🔐 **Set Custom Authorization For Your Tenants** - Set up isolated authorization logic and custom permissions for your vendors/organizations (tenants) and manage them in a single place.
+
+
+## Getting Started
+
+In Permify, authorization is divided into 3 core aspects; **modeling**, **storing authorization data** and **interacting with the APIs**.  
+
+- See how to [Model your Authorization] using Permify Schema.
+- Learn how Permify will [Store Authorization Data] as relationships.
+- Perform [Access Checks] anywhere in your stack.
+
+[Model your Authorization]: ../getting-started/modeling
+[Store Authorization Data]: ../getting-started/sync-data
+[Access Checks]: ../getting-started/enforcement
+
+For the ones that want to try it out and examine it instantly, try [Permify Playground](https://play.permify.co/)!
+
+ <a href="https://play.permify.co/" style={{ textDecoration: 'none', color: 'inherit' }}>
+    <div style={{ textAlign: 'center' }}>
+      <div>
+        <img src="https://github.com/user-attachments/assets/73dac375-667f-4d83-b59e-46bea790dcd5" style={{ maxWidth: '100%', height: 'auto' }} />
+      </div>
+    </div>
+  </a>
+
+## Community & Support
+
+We would love to hear from you!
+
+You can get immediate help on our [Discord Community](https://discord.com/invite/n6KfzYxhPp). This can be any kind of question-related to Permify, authorization, or authentication and identity management. We'd love to discuss anything related to access control space.
+
+For feature requests, bugs, or any improvements you can always open an [issue](https://github.com/permify/permify/issues). 
+
+**Want to Contribute? Here are the ways to contribute to Permify:**
+
+* **Contribute to codebase:** We're collaboratively working with our community to make Permify the best it can be! You can develop new features, fix existing issues or make third-party integrations/packages. 
+* **Improve documentation:** Alongside our codebase, documentation is an important part of our open-source journey. We're trying to give the best DX possible to explain ourselves and Permify. And you can help with that by importing resources or adding new ones.
+* **Contribute to playground:** Permify playground allows you to visualize and test your authorization logic. You can contribute to our playground by improving its user interface, fixing glitches, or adding new features.
+
+You can find more details about contributions on [CONTRIBUTING.md](https://github.com/Permify/permify/blob/master/CONTRIBUTING.md).
+
+## Roadmap
+
+You can find Permify's Public Roadmap [here](https://permify.featurebase.app/)!
+
+## Build Fine Grained Authorization for Your Company
+
+Our team is happy to help you get started with Permify. 
+
+If you'd like to learn more about using Permify or how it might fit into your authorization workflow, [schedule a call with one of our engineers](https://www.permify.co/book-demo).
+

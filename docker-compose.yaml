@@ -1,0 +1,39 @@
+services:
+    permify:
+        build:
+            context: .
+            dockerfile: Dockerfile.local
+        restart: "always"
+        ports:
+            - "3476:3476"
+            - "3478:3478"
+        volumes:
+            - .:/app
+        depends_on:
+            - "database"
+        healthcheck:
+            test: ["CMD", "grpc_health_probe", "-addr", "localhost:3478"]
+            interval: 10s
+            retries: 10
+            start_period: 60s
+
+    database:
+        image: "postgres"
+        ports:
+            - "5432:5432"
+        environment:
+            - "POSTGRES_PASSWORD=secret"
+            - "POSTGRES_DB=permify"
+
+    integration:
+        build:
+            context: .
+            dockerfile: integration-test/Dockerfile
+        container_name: integration
+        image: integration
+        depends_on:
+            permify:
+                condition: service_healthy
+
+volumes:
+    pg-data:
