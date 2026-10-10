@@ -9,7 +9,7 @@
   "dependencies": {
     "loose-envify": "^1.4.0",
     "mintlify": "^4.2.269",
-    "monaco-editor": "^0.55.1",
+    "monaco-editor": "^0.57.0",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "scheduler": "^0.27.0",
